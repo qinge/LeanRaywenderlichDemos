@@ -56,6 +56,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func share(sender: AnyObject) {
+        UIGraphicsBeginImageContext(mainImageView.bounds.size)
+        mainImageView.image?.drawInRect(CGRectMake(0, 0, mainImageView.frame.size.width, mainImageView.frame.size.height))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        presentViewController(activity, animated: true, completion: nil)
     }
   
     @IBAction func pencilPressed(sender: AnyObject) {
@@ -138,5 +145,32 @@ class ViewController: UIViewController {
         
     }
     
+}
+
+
+extension ViewController: SettingsViewControllerDelegate{
+ 
+    func settingsViewControllerFinished(settingsViewController: SettingsViewController) {
+        self.brushWidth = settingsViewController.brush
+        self.opacity = settingsViewController.opacity
+        
+        self.red = settingsViewController.red
+        self.green = settingsViewController.green
+        self.blue = settingsViewController.blue
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let settingsViewController = segue.destinationViewController as! SettingsViewController
+        settingsViewController.delegate = self
+        settingsViewController.brush = brushWidth
+        settingsViewController.opacity = opacity
+        
+        settingsViewController.red = red
+        settingsViewController.green = green
+        settingsViewController.blue = blue
+        
+        
+    }
 }
 

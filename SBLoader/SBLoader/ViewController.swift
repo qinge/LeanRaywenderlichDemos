@@ -21,6 +21,7 @@ class ViewController: UIViewController, HolderViewDelegate {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     addHolderView()
+    holderView.addOval()
   }
   
   override func didReceiveMemoryWarning() {
@@ -39,7 +40,26 @@ class ViewController: UIViewController, HolderViewDelegate {
   }
   
   func animateLabel() {
-
+    // 1
+    holderView.removeFromSuperview()
+    view.backgroundColor = Colors.blue
+    
+    // 2
+    let label: UILabel = UILabel(frame: view.frame)
+    label.textColor = Colors.white
+    label.font = UIFont(name: "HelveticaNeue-Thin", size: 170.0)
+    label.textAlignment = NSTextAlignment.Center
+    label.text = "S"
+    label.transform = CGAffineTransformScale(label.transform, 0.25, 0.25)
+    view.addSubview(label)
+    
+    // 3
+    UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseInOut,
+        animations: ({
+            label.transform = CGAffineTransformScale(label.transform, 4.0, 4.0)
+        }), completion: { finished in
+            self.addButton()
+    })
   }
   
   func addButton() {

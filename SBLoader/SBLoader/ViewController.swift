@@ -39,6 +39,9 @@ class ViewController: UIViewController, HolderViewDelegate {
     view.addSubview(holderView)
   }
   
+    /**
+      文字 s 动画
+     */
   func animateLabel() {
     // 1
     holderView.removeFromSuperview()

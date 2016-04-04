@@ -35,6 +35,9 @@ class HolderView: UIView {
   }
     
     
+    /**
+     添加圆形图层 并实现从小变大动画
+     */
     func addOval(){
         layer.addSublayer(ovalLayer)
         ovalLayer.expand()
@@ -42,6 +45,9 @@ class HolderView: UIView {
         NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: "wobbleOval", userInfo: nil, repeats: false)
     }
     
+    /**
+     添加三角形图层 并实现心跳动画
+     */
     func wobbleOval(){
         
         layer.addSublayer(triangleLayer)
@@ -51,12 +57,18 @@ class HolderView: UIView {
         NSTimer.scheduledTimerWithTimeInterval(0.9, target: self, selector: "drawAnimatedTriangle", userInfo: nil, repeats: false)
     }
     
+    /**
+     实现 三个角冒出动画
+     */
     func drawAnimatedTriangle(){
         triangleLayer.animate()
         NSTimer.scheduledTimerWithTimeInterval(0.9, target: self, selector: "spinAndTransform", userInfo: nil, repeats: false)
     }
     
     
+    /**
+     旋转三角 并将圆形图层变小
+     */
     func spinAndTransform() {
         // 1
         layer.anchorPoint = CGPointMake(0.5, 0.6)
@@ -79,6 +91,10 @@ class HolderView: UIView {
             userInfo: nil, repeats: false)
     }
     
+    
+    /**
+     画边框动画
+     */
     func drawRedAnimatedRectangle() {
         layer.addSublayer(redRectangleLayer)
         redRectangleLayer.animateStrokeWithColor(Colors.red)
@@ -92,6 +108,9 @@ class HolderView: UIView {
             userInfo: nil, repeats: false)
     }
     
+    /**
+     灌水动画
+     */
     func drawArc() {
         layer.addSublayer(arcLayer)
         arcLayer.animate()
@@ -100,6 +119,9 @@ class HolderView: UIView {
             userInfo: nil, repeats: false)
     }
     
+    /**
+     变大全屏动画
+     */
     func expandView() {
         // 1
         backgroundColor = Colors.blue

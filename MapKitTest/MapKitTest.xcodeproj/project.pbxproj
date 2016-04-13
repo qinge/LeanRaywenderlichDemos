@@ -14,6 +14,10 @@
 		2539626D1CBC941C0008AAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2539626B1CBC941C0008AAE1 /* LaunchScreen.storyboard */; };
 		253962751CBCC33A0008AAE1 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253962741CBCC33A0008AAE1 /* TestViewController.swift */; };
 		253962791CBCC8380008AAE1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253962781CBCC8380008AAE1 /* main.swift */; };
+		25C6A4871CBDE8830040F035 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C6A4851CBDE8830040F035 /* JSON.swift */; };
+		25C6A4881CBDE8830040F035 /* PublicArt.json in Resources */ = {isa = PBXBuildFile; fileRef = 25C6A4861CBDE8830040F035 /* PublicArt.json */; };
+		25C6A48A1CBDEB100040F035 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C6A4891CBDEB100040F035 /* Artwork.swift */; };
+		25C6A48C1CBDF4F10040F035 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C6A48B1CBDF4F10040F035 /* VCMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		2539626E1CBC941C0008AAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		253962741CBCC33A0008AAE1 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		253962781CBCC8380008AAE1 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		25C6A4851CBDE8830040F035 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		25C6A4861CBDE8830040F035 /* PublicArt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PublicArt.json; sourceTree = "<group>"; };
+		25C6A4891CBDEB100040F035 /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		25C6A48B1CBDF4F10040F035 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +66,11 @@
 		253962611CBC941C0008AAE1 /* MapKitTest */ = {
 			isa = PBXGroup;
 			children = (
+				25C6A4841CBDE8490040F035 /* Supporting Files */,
 				253962621CBC941C0008AAE1 /* AppDelegate.swift */,
 				253962641CBC941C0008AAE1 /* ViewController.swift */,
+				25C6A48B1CBDF4F10040F035 /* VCMapView.swift */,
+				25C6A4891CBDEB100040F035 /* Artwork.swift */,
 				253962661CBC941C0008AAE1 /* Main.storyboard */,
 				253962691CBC941C0008AAE1 /* Assets.xcassets */,
 				2539626B1CBC941C0008AAE1 /* LaunchScreen.storyboard */,
@@ -68,6 +79,15 @@
 				253962781CBCC8380008AAE1 /* main.swift */,
 			);
 			path = MapKitTest;
+			sourceTree = "<group>";
+		};
+		25C6A4841CBDE8490040F035 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				25C6A4851CBDE8830040F035 /* JSON.swift */,
+				25C6A4861CBDE8830040F035 /* PublicArt.json */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25C6A4881CBDE8830040F035 /* PublicArt.json in Resources */,
 				2539626D1CBC941C0008AAE1 /* LaunchScreen.storyboard in Resources */,
 				2539626A1CBC941C0008AAE1 /* Assets.xcassets in Resources */,
 				253962681CBC941C0008AAE1 /* Main.storyboard in Resources */,
@@ -142,8 +163,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				253962651CBC941C0008AAE1 /* ViewController.swift in Sources */,
+				25C6A4871CBDE8830040F035 /* JSON.swift in Sources */,
 				253962751CBCC33A0008AAE1 /* TestViewController.swift in Sources */,
 				253962791CBCC8380008AAE1 /* main.swift in Sources */,
+				25C6A48A1CBDEB100040F035 /* Artwork.swift in Sources */,
+				25C6A48C1CBDF4F10040F035 /* VCMapView.swift in Sources */,
 				253962631CBC941C0008AAE1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +320,7 @@
 				253962731CBC941C0008AAE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

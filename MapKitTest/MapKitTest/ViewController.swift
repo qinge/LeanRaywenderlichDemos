@@ -6,7 +6,7 @@
 //  Copyright © 2016年 snqu-ios. All rights reserved.
 //
 //  https://www.raywenderlich.com/90971/introduction-mapkit-swift-tutorial
-//
+//  wwdc2012中的session300
 
 import UIKit
 import MapKit
@@ -27,6 +27,13 @@ class ViewController: UIViewController {
         
         self.centerMapOnLocation(initialLocation)
         
+        mapView.delegate = self
+        
+        let artwork = Artwork(title: "King David Kalakaua",
+            locationName: "Waikiki Gateway Park",
+            discipline: "Sculpture",
+            coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
+        mapView.addAnnotation(artwork)
     }
 
     override func didReceiveMemoryWarning() {

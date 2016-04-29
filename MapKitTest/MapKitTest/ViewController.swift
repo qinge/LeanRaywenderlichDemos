@@ -36,6 +36,13 @@ class ViewController: UIViewController {
 //            discipline: "Sculpture",
 //            coordinate: CLLocationCoordinate2D(latitude: 21.283921, longitude: -157.831661))
 //        mapView.addAnnotation(artwork)
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let circle = MKCircle(centerCoordinate: coordinate, radius: 500)
+        circle.title = "test title"
+        mapView.addOverlay(circle)
+        
+//        let circleRenderer = MKCircleRenderer(circle: circle)
+        
         
         loadInitialData()
         mapView.addAnnotations(artworks)
@@ -81,7 +88,7 @@ class ViewController: UIViewController {
                 for artworkJSON  in jsonData! {
                     if let artworkJSON = artworkJSON.array {
                         let artwork = Artwork.fromJSON(artworkJSON)
-                        artworks.append(artwork!)
+//                        artworks.append(artwork!)
                     }
                 }
             }

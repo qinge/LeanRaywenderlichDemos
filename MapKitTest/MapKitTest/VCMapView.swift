@@ -39,4 +39,28 @@ extension ViewController: MKMapViewDelegate {
         let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
         location.mapItem().openInMapsWithLaunchOptions(launchOptions)
     }
+    
+    func mapView(mapView: MKMapView, viewForOverlay overlay: MKOverlay) -> MKOverlayView {
+        var overlayView: MKOverlayView!
+        if overlay.isKindOfClass(MKCircle.self) {
+            let cirView = MKCircleView()
+            cirView.backgroundColor = UIColor.redColor()
+            cirView.alpha = 0.1
+            overlayView = cirView
+        }
+        return overlayView
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        var render: MKOverlayRenderer!
+        if overlay.isKindOfClass(MKCircle.self) {
+            render = MKOverlayRenderer(overlay: overlay)
+            render.alpha = 0.2
+        }
+        return render
+    }
+    
+    
 }
+
+
